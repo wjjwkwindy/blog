@@ -1,6 +1,6 @@
-**[antfu.me](https://antfu.me)**
+**[blog.co2oc.com](https://blog.co2oc.com)**
 
-my personal website powered by [Vite](https://vitejs.dev/)
+powered by [antfu](https://github.com/antfu)
 
 <br>
 
