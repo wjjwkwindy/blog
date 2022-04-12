@@ -9,8 +9,8 @@ import { slugify } from './slugify'
 
 const DOMAIN = 'https://antfu.me'
 const AUTHOR = {
-  name: 'Anthony Fu',
-  email: 'hi@antfu.me',
+  name: 'Cosy Rain',
+  email: 'cosyrain#outlook.com',
   link: DOMAIN,
 }
 const markdown = MarkdownIt({
@@ -28,15 +28,15 @@ async function buildBlogRSS() {
   const files = await fg('pages/posts/*.md')
 
   const options = {
-    title: 'Anthony Fu',
-    description: 'Anthony Fu\' Blog',
-    id: 'https://antfu.me/',
-    link: 'https://antfu.me/',
-    copyright: 'CC BY-NC-SA 4.0 2021 © Anthony Fu',
+    title: 'Cosy Rain',
+    description: 'Cosy Rain\' Blog',
+    id: 'https://blog.co2oc.com',
+    link: 'https://blog.co2oc.com',
+    copyright: 'CC BY-NC-SA 4.0 2021 © Cosy Rain',
     feedLinks: {
-      json: 'https://antfu.me/feed.json',
-      atom: 'https://antfu.me/feed.atom',
-      rss: 'https://antfu.me/feed.xml',
+      json: 'https://blog.co2oc.com/feed.json',
+      atom: 'https://blog.co2oc.com/feed.atom',
+      rss: 'https://blog.co2oc.com/feed.xml',
     },
   }
   const posts: any[] = (
@@ -75,15 +75,15 @@ async function buildNotesRSS() {
   const raw = await fs.readFile('pages/notes.md', 'utf-8')
 
   const options = {
-    title: 'Anthony Fu\'s Notes',
-    description: 'Anthony Fu\'s Notes',
-    id: 'https://antfu.me/notes',
-    link: 'https://antfu.me/notes',
-    copyright: 'CC BY-NC-SA 4.0 2021 © Anthony Fu',
+    title: 'Cosy Rain\'s Notes',
+    description: 'Cosy Rain\'s Notes',
+    id: 'https://blog.co2oc.com/notes',
+    link: 'https://blog.co2oc.com/notes',
+    copyright: 'CC BY-NC-SA 4.0 2021 © Cosy Rain',
     feedLinks: {
-      json: 'https://antfu.me/notes/feed.json',
-      atom: 'https://antfu.me/notes/feed.atom',
-      rss: 'https://antfu.me/notes/feed.xml',
+      json: 'https://blog.co2oc.com/notes/feed.json',
+      atom: 'https://blog.co2oc.com/notes/feed.atom',
+      rss: 'https://blog.co2oc.com/notes/feed.xml',
     },
   }
   const noteMatches = raw.matchAll(/<article>(.*?)<\/article>/gms)
@@ -114,8 +114,8 @@ async function buildNotesRSS() {
 
 async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   options.author = AUTHOR
-  options.image = 'https://antfu.me/avatar.png'
-  options.favicon = 'https://antfu.me/logo.png'
+  options.image = 'https://blog.co2oc.com/avatar.png'
+  options.favicon = 'https://blog.co2oc.com/logo.png'
 
   const feed = new Feed(options)
 
